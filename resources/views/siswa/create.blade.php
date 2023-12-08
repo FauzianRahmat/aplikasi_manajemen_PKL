@@ -21,13 +21,13 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content">
-        <div class="container-fluid">
+    <div class="content" >
+        <div class="container-fluid" >
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Form Siwa</h3>
+                        <div class="card-header" style="background-color: #0d4074">
+                            <h3 class="card-title">Form Siswa</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -35,8 +35,8 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="id">ID Siswa</label>
-                                    <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan ID">
+                                    <label for="id">NISN</label>
+                                    <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan NISN">
                                 </div>
                                 <div class="form-group">
                                     <label for="Email">Email</label>
@@ -72,15 +72,6 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>No. Telepon</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                        </div>
-                                        <input type="number" class="form-control" name="tlp" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label>Alamat</label>
                                     <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan alamat"></textarea>
                                 </div>
@@ -91,4 +82,9 @@
                             <!-- /.content -->
                         </form>
                     </div>
-                    @endsection
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    @endsection

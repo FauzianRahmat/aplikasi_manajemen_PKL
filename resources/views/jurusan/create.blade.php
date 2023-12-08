@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #0d4074">
                             <h3 class="card-title">Form jurusan</h3>
                         </div>
                         <!-- /.card-header -->

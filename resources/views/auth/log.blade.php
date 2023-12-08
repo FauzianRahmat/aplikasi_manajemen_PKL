@@ -25,7 +25,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f0faff;
+            background: #063f5c;
         }
 
         .wrapper {

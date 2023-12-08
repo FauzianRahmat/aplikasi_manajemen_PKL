@@ -1,12 +1,12 @@
 @extends('master')
 @section('title', 'absen')
 @section('content')
-    <div class="content-wrapper" style="background-color: #2F5B68">
+    <div class="content-wrapper">
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 style="color: white">Absen Siswa</h1>
+                        <h1>Absen Siswa</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -19,8 +19,8 @@
         </section>
         <div class="col-md-12">
             <div class="card card-primary">
-                <div class="card-header" style="background-color: #BDD8F3">
-                    <h3 class="card-title" style="color: black">Data Siswa</h3>
+                <div class="card-header" style="background-color: #0d4074">
+                    <h3 class="card-title">Data Siswa</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -28,17 +28,21 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="NIS">NIS</label>
-                            <input type="number" class="form-control" name="nis" id="NIS" placeholder="Masukkan NIS" >
+                            <label for="nisn">NISN</label>
+                            <input type="text" class="form-control" name="nis" id="NIS" placeholder="Masukkan NISN" >
                         </div>
                         <div class="form-group">
                             <label for="Nama">Nama</label>
                             <input type="text" class="form-control" name="nama" id="Nama" placeholder="Masukkan Nama">
                         </div>
                         <div class="form-group">
-                            <label for="kelas">Kelas</label>
-                            <input type="text" class="form-control" name="kelas" id="kelas" placeholder="Masukkan kelas">
-                        </div>
+                            <label>Kelas</label>
+                            <select class="custom-select" name="kelas">
+                                <option selected disabled>Pilih kelas</option>
+                                <option>12</option>
+                                <option>11</option>
+                                <option>10</option>
+                            </select>
                         <div class="form-group">
                             <label for="Tanggal masuk">Tanggal Masuk</label>
                             <input type="date" class="form-control" name="tanggal_masuk" id="tanggal_masuk" placeholder="Masukan Tanggal masuk">
@@ -67,15 +71,13 @@
                         <div class="form-group">
                             <label>Keterangan</label>
                             <select class="custom-select" name="keterangan">
-                                <option selected disabled>Pilih Ket</option>
-                                <option value="HADIR">Hadir</option>
-                                <option value="SAKIT">Sakit</option>
-                                <option value="IJIN">Ijin</option>
-                                <option value="ALFA">Alfa</option>
+                                <option selected disabled>Pilih Keterangan</option>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Sakit">Sakit</option>
+                                <option value="Izin">Izin</option>
                             </select>
                         </div>
                     </div>
-
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
@@ -83,5 +85,4 @@
             </div>
         </div>
     </div>
-        
 @endsection

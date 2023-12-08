@@ -13,7 +13,7 @@
 
 
 <!-- Main content -->
-<div class="content-wrapper">
+<div class="content-wrapper"  style="background-color: #BDD8F3">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #0d4074">
                             <h3 class="card-title">Table Data perusahaan</h3>
                         </div>
                         <!-- /.card-header -->
@@ -44,7 +44,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ID</th>
+                                    <th>ID Perusahaan</th>
                                     <th>Nama perusahaan</th>
                                     <th>Alamat Perusahaan</th>
                                     <th>Keterangan</th>
@@ -56,7 +56,7 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $value->id }}</td>
                                     <td>{{ $value->nama_perusahaan}}</td>
-                                    <td>{{ $value->almat_perusahaan }}</td>
+                                    <td>{{ $value->alamat_perusahaan }}</td>
                                     <td>{{ $value->keterangan}}</td>
                                     <td>
                                         <form action="{{ route('perusahaan.destroy',$value->id)}}" method="post">

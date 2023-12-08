@@ -3,7 +3,7 @@
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <div class="content-header"  style="background-color: #BDD8F3">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
@@ -21,17 +21,16 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content">
+    <!-- class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #0d4074">
                             <h3 class="card-title">Form Daftar Perusahaan</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="id">ID Perusahaan</label>
@@ -49,14 +48,15 @@
                                 <label>keterangan</label>
                                 <textarea class="form-control" rows="3" name="keterangan" placeholder="Masukan Keterangan" disabled>{{ $perusahaan->keterangan }}</textarea>
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
                         </div>
                         <div class="card-footer">
                             <a href="/perusahaan"><button type="submit" class="btn btn-primary">Kembali</button></a>
                         </div>
-                        <!-- /.content -->
-
                     </div>
-                    @endsection
+                </div>
+            </div>
+        </div>
+<!-- /.content -->
+</div>
+
+@endsection

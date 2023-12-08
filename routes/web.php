@@ -6,10 +6,15 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\PklController;
+use App\Http\Controllers\DokumentasiController;
+use App\Http\Controllers\DownloadController;
 use App\Models\Siswa;
 use App\Models\Jurusan;
 use App\Models\Perusahaan;
 use App\Models\Absen;
+use App\Models\Pkl;
+use App\Models\Dokumentasi;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,23 +32,20 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/store', 'store')->name('auth.store');
     Route::post('/authentication', 'authentication')->name('auth.authentication');
     Route::post('/logout', 'logout')->name('auth.logout');
-    Route::get('/welcome', 'welcome')->name('welcome');
+    Route::get('/welcome', 'welcome')->name('welcome')->middleware('auth');
 });
 
 Route::get('/', function () {
     return view('auth.log');
 });
 
-
-Route::resource('siswa',SiswaController::class);
-
-Route::resource('jurusan',JurusanController::class);
-
-Route::resource('perusahaan',PerusahaanController::class);
-
-Route::resource('absen',AbsenController::class);
-
-
+//ADMIN 
+Route::resource('siswa',SiswaController::class)->middleware('auth');
+Route::resource('jurusan',JurusanController::class)->middleware('auth');
+Route::resource('perusahaan',PerusahaanController::class)->middleware('auth');
+Route::resource('absen',AbsenController::class)->middleware('auth');
+Route::resource('pkl',PklController::class)->middleware(['auth']);
+Route::resource('dokumentasi',DokumentasiController::class)->middleware('auth');
 
 
 

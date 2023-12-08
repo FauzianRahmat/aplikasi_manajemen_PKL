@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #0d4074">
                             <h3 class="card-title">Data Siswa</h3>
                         </div>
                         <!-- /.card-header -->
@@ -36,7 +36,7 @@
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="nis">NIS</label>
+                                    <label for="nis">NISN</label>
                                     <input type="number" class="form-control @error('nis') is-invalid @enderror" name="nis" id="nis" placeholder="Masukan Kode" value="{{ $absen->nis }}">
                                 </div>
                                 @error('nis')
@@ -55,14 +55,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Kelas</label>
-                                    <textarea class="form-control @error('kelas') is-invalid @enderror" rows="3" name="kelas" placeholder="Masukan Kelas">{{ $absen->kelas }}</textarea>
+                                    <input type="text" class="form-control" name="kelas" id="kelas" placeholder="Masukan Kelas" value="{{ $absen->kelas }}" >
                                 </div>
-                                @error('alamat')
-                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                @enderror
-                                @error('Tanggal_masuk')
-                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                @enderror
                                 <div class="form-group">
                                     <label for="jenis_kelamin">Jenis Kelamin</label>
                                     <select class="custom-select @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin" value="{{ $absen->jenis_kelamin }}">
@@ -91,16 +85,13 @@
                                 @error('jurusan')
                                 <div class="alert alert-danger mt-1">{{ $message }}</div>
                                 @enderror
-                    
                                 <div class="form-group">
                                     <label>Keterangan</label>
-                                    <select class="custom-select @error('keterangan') is-invalid @enderror" name="keterangan" value="{{ $absen->absen }}">
+                                    <select class="custom-select" name="keterangan">
                                         <option selected disabled>Pilih Keterangan</option>
-                                        <option selected>{{ $absen->keterangan }}</option>
-                                        <option value="HADIR">Hadir</option>
-                                        <option value="IJIN">Ijin</option>
-                                        <option value="SAKIT">Sakit</option>
-                                        <option value="ALFA">Alfa</option>
+                                        <option value="Hadir">Hadir</option>
+                                        <option value="Sakit">Sakit</option>
+                                        <option value="Izin">Izin</option>
                                     </select>
                                 </div>
                                 @error('keterangan')

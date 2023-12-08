@@ -16,12 +16,6 @@ class siswa extends Model
         'tanggal_lahir',
         'jenis_kelamin',
         'jurusan',
-        'tlp',
         'alamat',
-
     ];
-    public function peminjaman()
-    {
-        return $this->hasMany('App\Models\Siswa', 'id', 'siswa_id');
-    }
 }

@@ -10,13 +10,8 @@ class Perusahaan extends Model
     use HasFactory;
     protected $table = 'perusahaan';
     protected $fillable = [
-        'id',
         'nama_perusahaan',
         'alamat_perusahaan',
         'keterangan',
     ];
-    public function peminjaman()
-    {
-        return $this->hasMany('App\Models\perusahaan', 'id', 'perusahaan_id');
-    }
 }

@@ -26,38 +26,42 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header"  style="background-color: #0d4074">
                             <h3 class="card-title">Form siswa</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('siswa.update', $siswa[0]->id) }}" method="post">
+                        <form action="{{ route('siswa.update', $siswa->id) }}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="id">ID siswa</label>
-                                    <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan ID" value="{{ $siswa[0]->id }}">
+                                    <label for="id">NISN</label>
+                                    <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan NISN" value="{{ $siswa->id }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">email</label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Masukan email" value="{{ $siswa[0]->kode }}">
+                                    <label for="email"> Email</label>
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Masukan email" value="{{ $siswa->email }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan nama" value="{{ $siswa[0]->nama }}">
+                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan nama" value="{{ $siswa->nama }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="jenis kelamin">Jenis Kelamin</label>
-                                    <select class="custom-select" name="jenis_kelamin" value="{{ $siswa[0]->jenis_kelamin }}">
+                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                                    <input type="text" class="form-control" name="tanggal_lahir" id="nama" placeholder="Masukan Tanggal" value="{{ $siswa->tanggal_lahir }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                                    <select class="custom-select" name="jenis_kelamin">
                                         <option selected disabled></option>
                                         <option>LAKI-LAKI</option>
-                                        <option>PEREMPUAN</option>
+                                        <option>PERUMPUAN</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Jurusan</label>
-                                    <select class="custom-select" name="jurusan" value="{{ $siswa[0]->jurusan }}">
+                                    <select class="custom-select" name="jurusan">
                                         <option selected disabled>Pilih Jurusan</option>
                                         <option>RPL</option>
                                         <option>DPIB</option>
@@ -69,23 +73,20 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>No. Telepon</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                        </div>
-                                        <input type="number" class="form-control" name="tlp" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka" value="{{ $siswa[0]->tlp }}">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label>Alamat</label>
-                                    <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan alamat">{{ $siswa[0]->alamat }}"</textarea>
+                                    <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan alamat">{{ $siswa->alamat }}</textarea>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="{{ route('siswa.index') }}" class="btn btn-primary">Back</a>
+                                <button type="submit" class="btn btn-warning">Update</button>
                             </div>
-                            <!-- /.content -->
-                        </form>
+                        </div>
                     </div>
-                    @endsection
+                </div>
+            </div>
+        </div>
+        <!-- /.content -->
+    </form>
+</div>
+@endsection

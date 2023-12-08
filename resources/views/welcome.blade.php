@@ -36,7 +36,7 @@
         flex-direction: column;
         text-align: center;
         height: 150px;
-        width: 150px;
+        width: 200px;
         border-radius: 10px;
         color: white;
         cursor: pointer;
@@ -61,7 +61,7 @@
         transform: scale(0.9, 0.9);
     }
 </style>
-<div class="content-wrapper">
+<div class="content-wrapper"  style="background-color: #BDD8F3">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -71,8 +71,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Prakerin</li>
+                        {{ Auth::user()->name}}
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -87,18 +86,18 @@
             <div class="col-md-12">
                 <div class="cards">
                     <div class="card blue">
-                        <p class="tip">Data Siswa</p>
-                        <p class="second-text"></p>
+                        <p class="tip">DATA</p>
+                        <p class="second-text">Siswa</p>
                         <a href="/siswa/" class="small-box-footer">Klik di sini <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     <div class="card blue">
-                        <p class="tip">Jurusan</p>
-                        <p class="second-text"></p>
+                        <p class="tip">DATA</p>
+                        <p class="second-text">Jurusan</p>
                         <a href="/jurusan/" class="small-box-footer">Klik di sini <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     <div class="card green">
-                        <p class="tip">Perusahaan</p>
-                        <p class="second-text"></p>
+                        <p class="tip">DATA</p>
+                        <p class="second-text">Perusahaan</p>
                         <a href="/perusahaan/" class="small-box-footer">Klik di sini <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -108,14 +107,19 @@
             <div class="col-md-12">
                 <div class="cards">
                     <div class="card blue">
-                        <p class="tip">Absen</p>
-                        <p class="second-text"></p>
+                        <p class="tip">DATA</p>
+                        <p class="second-text">Absensi</p>
                         <a href="/absen/" class="small-box-footer">Klik di sini <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                    <div class="card green">
-                        <p class="tip">Dokumentasi</p>
-                        <p class="second-text"></p>
-                        <a href="/jurusan/" class="small-box-footer">Klik di sini <i class="fas fa-arrow-circle-right"></i></a>
+                    <div class="card blue">
+                        <p class="tip">DATA</p>
+                        <p class="second-text">PKL</p>
+                        <a href="/pkl/" class="small-box-footer">Klik di sini <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                    <div class="card blue">
+                        <p class="tip">DATA</p>
+                        <p class="second-text">Dokumentasi</p>
+                        <a href="/dokumentasi/" class="small-box-footer">Klik di sini <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,6 @@
                     <div class="inner">
 
                         <h3>{{data}}</h3>
-
                         <p> Data siswa</p>
                     </div>
                     <div class="icon">
@@ -75,7 +74,6 @@
                 <div class="small-box bg-success">
                     <div class="inner">
                         <h3>3000</h3>
-
                         <p>Data peminjam</p>
                     </div>
                     <div class="icon">
@@ -85,7 +83,6 @@
                 </div>
             </div>
             <!-- ./col -->
-
         </div>
     </div>
 </div>

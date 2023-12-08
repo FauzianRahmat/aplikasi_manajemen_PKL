@@ -13,7 +13,7 @@
 
 
 <!-- Main content -->
-<div class="content-wrapper">
+<div class="content-wrapper"  style="background-color: #BDD8F3">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -36,8 +36,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Table Data Jurusan</h3>
+                        <div class="card-header"  style="background-color: #0d4074">
+                            <h3 class="card-title">Data Jurusan</h3>
                         </div>
                         <!-- /.card-header -->
                         <table class="table table-head-fixed text-nowrap">
@@ -62,14 +62,11 @@
                                             @csrf
                                             @method('DELETE')
                                             <a href="{{ route('jurusan.show',$value->id)}}" class="btn-sm btn-info">Detail</a>
-                                            <a href="{{ route('jurusan.edit',$value->id)}}" class="btn-sm btn-warning">Edit</a>
-                                            <button type="submit" class="btn-sm btn-danger" onclick="return confirm('Apakah Yakin Ingin Mengubah Ini?')">Delete
-
+                                            <a href="{{ route('jurusan.edit', $value->id)}}" class="btn-sm btn-warning">Edit</a>
+                                            <button class="btn-sm btn-danger">Delete</button>
                                         </form>
-
                                     </td>
                                 </tr>
-
                                 @empty
                                 <tr>
                                     <td>Data Kosong</td>

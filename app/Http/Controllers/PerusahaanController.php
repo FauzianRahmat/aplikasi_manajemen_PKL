@@ -13,7 +13,7 @@ class PerusahaanController extends Controller
      */
     public function index()
     {
-        $perusahaan = perusahaan::all();
+        $perusahaan = Perusahaan::all();
         return view('perusahaan.index', compact('perusahaan'));
     }
 
@@ -23,14 +23,14 @@ class PerusahaanController extends Controller
     public function create()
     {
         
-        $perusahaan= perusahaan::all();
+        $perusahaan= Perusahaan::all();
         return view('perusahaan.create', compact('perusahaan'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Perusahaan $Perusahaan)
+    public function store(Request $request, Perusahaan $perusahaan)
     {
         
         $validationData = $request->validate([
@@ -52,25 +52,24 @@ class PerusahaanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Perusahaan $Perusahaan)
+    public function show(Perusahaan $perusahaan)
     {
-        $perusahaan = perusahaan::all();
+    
         return view('perusahaan.show', compact('perusahaan'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function Edit (Perusahaan $Perusahaan)
+    public function Edit (Perusahaan $perusahaan)
     {
-        $perusahaan = perusahaan::all();
-        return view('perusahaan.index', compact('perusahaan'));
+        return view('perusahaan.edit', compact('perusahaan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Perusahaan $Perusahaan)
+    public function update(Request $request, Perusahaan $perusahaan)
     {
         $request->validate([
             'id' => 'required',
@@ -80,13 +79,13 @@ class PerusahaanController extends Controller
         ]);
 
         $perusahaan->update($request->all());
-        return redirect()->route('perusahaan.show');
+        return redirect()->route('perusahaan.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Perusahaan $Perusahaan)
+    public function destroy(Perusahaan $perusahaan)
     {
         $perusahaan = perusahaan::where('id', $perusahaan->id)->delete();
         return redirect()->route('perusahaan.index');

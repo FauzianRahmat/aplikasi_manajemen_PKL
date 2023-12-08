@@ -52,7 +52,6 @@ class JurusanController extends Controller
      */
     public function show(jurusan $jurusan)
     {
-        $jurusan = jurusan::all();
         return view('jurusan.show', compact('jurusan'));
     }
 
@@ -61,7 +60,6 @@ class JurusanController extends Controller
      */
     public function edit(jurusan $jurusan)
     {
-        $jurusan = jurusan::all();
         return view('jurusan.edit', compact('jurusan'));
     }
 

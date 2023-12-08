@@ -1,7 +1,7 @@
 @extends('master')
 @section('title', 'jurusan')
 @section('content')
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: #BDD8F3">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header"  style="background-color: #0d4074">
                             <h3 class="card-title">Form Jurusan</h3>
                         </div>
                         <!-- /.card-header -->
@@ -35,23 +35,25 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="id">ID Jurusan</label>
-                                <input type="text" class="form-control" name="id" id="id jurusan" placeholder="Masukkan ID" value="{{ $jurusan->id jurusan}}" disabled>
+                                <input type="text" class="form-control" name="id" id="id jurusan" placeholder="Masukkan ID" value="{{ $jurusan->id}}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="email">Kepala Jurusan</label>
-                                <input type="text" class="form-control" name="kepala_jurusan" id="kepala jurusan" placeholder="Masukan nama" value="{{ $jurusan->kepala jurusan }}" disabled>
+                                <input type="text" class="form-control" name="kepala_jurusan" id="kepala jurusan" placeholder="Masukan nama" value="{{ $jurusan->kepala_jurusan}}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="nama">Nama Jurusan</label>
-                                <input type="text" class="form-control" name="nama_Jurusan" id="nama Jurusan" placeholder="Masukan Jurusan" value="{{ $jurusan->nama Jurusan }}" disabled>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
+                                <input type="text" class="form-control" name="nama_Jurusan" id="nama Jurusan" placeholder="Masukan Jurusan" value="{{ $jurusan->nama_jurusan }}" disabled>
                         </div>
                         <div class="card-footer">
-                            <a href="/siswa"><button type="submit" class="btn btn-primary">Kembali</button></a>
+                            <a href="/jurusan"><button type="submit" class="btn btn-primary">Back</button></a>
                         </div>
-                        <!-- /.content -->
-
                     </div>
-                    @endsection
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.content -->
+</div>
+@endsection

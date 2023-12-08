@@ -26,14 +26,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #0d4074">
                             <h3 class="card-title">Form Siswa</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="nis">NIS</label>
+                                <label for="nis">NISN</label>
                                 <input type="number" class=" form-control" name="nis" id="nis" placeholder="Masukan NIS" value="{{ $absen->nis }}" disabled>
                             </div>
                             <div class="form-group">
@@ -73,25 +73,17 @@
                                 <label>Keterangan</label>
                                 <select class="custom-select" name="keterangan"  disabled>
                                     <option selected disabled>{{ $absen->keterangan }}</option>
-                                    <option value="HADIR">Hadir</option>
-                                    <option value="IJIN">Ijin</option>
-                                    <option value="SAKIT">Sakit</option>
-                                    <option value="ALFA">Alfa</option>
+                                    <option value="Hadir">Hadir</option>
+                                    <option value="Izin">Izin</option>
+                                    <option value="Sakit">Sakit</option>
                                 </select>
                             </div>
                         </div>
                                 
-                            
-
-                            
-
-
                             <!-- /.card-body -->
-
                             <div class="card-footer">
-                                <a href="{{ route('absen.index') }}" class="btn btn-primary">Back</a>
+                                <a href="{{ route('absen.index') }}" class="btn btn-primary">kembali</a>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -100,4 +92,4 @@
         <!-- /.content -->
 
     </div>
- @endsection
+@endsection

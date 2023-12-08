@@ -29,7 +29,7 @@ class SiswaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request , Siswa $Siswa)
+    public function store(Request $request, siswa $siswa)
     {
         $validationData = $request->validate([
             'id' => 'required',
@@ -38,20 +38,8 @@ class SiswaController extends Controller
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'jurusan' => 'required',
-            'tlp' => 'required',
             'alamat' => 'required',
         ]);
-
-        // $siswa = new Siswa;
-        // $siswa->id = $request->id;
-        // $siswa->email = $request->email;
-        // $siswa->nama= $request->nama;
-        // $siswa->tanggal_lahir = $request->tanggal_lahir;
-        // $siswa->jenis_kelamin = $request->jenis_kelamin;
-        // $siswa->jurusan = $request->jurusan;
-        // $siswa->tlp = $request->tlp;
-        // $siswa->alamat = $request->alamat;
-        // $siswa->save();
 
         Siswa::create($validationData);
         return redirect()->route('siswa.index');
@@ -60,9 +48,8 @@ class SiswaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Siswa $siswa)
+    public function show(siswa $siswa)
     {
-        $siswa = siswa::all();
         return view('siswa.show', compact('siswa'));
     }
 
@@ -71,7 +58,6 @@ class SiswaController extends Controller
      */
     public function edit(siswa $siswa)
     {
-        $siswa = siswa::all();
         return view('siswa.edit', compact('siswa'));
     }
 
@@ -80,19 +66,18 @@ class SiswaController extends Controller
      */
     public function update(Request $request, siswa $siswa)
     {
-        $request->validate([
+        $validationData = $request->validate([
             'id' => 'required',
             'email' => 'required',
             'nama' => 'required',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'jurusan' => 'required',
-            'tlp' => 'required',
             'alamat' => 'required',
         ]);
 
         $siswa->update($request->all());
-        return redirect()->route('siswa.show');
+        return redirect()->route('siswa.index');
     }
 
     /**

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('tanggal_lahir');
             $table->string('jenis_kelamin');
             $table->string('jurusan');
-            $table->string('tlp', 10);
             $table->string('alamat', 100);
             $table->timestamps();
         });

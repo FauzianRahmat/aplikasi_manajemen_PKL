@@ -49,11 +49,21 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
+        
         $credentials = $request->only('email', 'password');
-        if ($auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->route('welcome');
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+        
+            // Check user role
+            if ($user->role_id === 1) {
+                // Jika role_id 1 (user), redirect ke halaman siswa
+                return redirect()->to('/siswa/create');
+            } else {
+                // Redirect ke halaman selamat datang jika role bukan user
+                return redirect()->route('welcome');
+            }
         }
+        
         return back()->withErrors([
             'email' => 'Email password salah'
         ])->onlyInput('email');

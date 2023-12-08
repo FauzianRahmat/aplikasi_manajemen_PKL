@@ -13,7 +13,7 @@
 
 
 <!-- Main content -->
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: #BDD8F3">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #0d4074">
                             <h3 class="card-title">Table Data siswa</h3>
                         </div>
                         <!-- /.card-header -->
@@ -44,14 +44,13 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>id</th>
-                                    <th>email</th>
-                                    <th>nama</th>
-                                    <th>tanggal lahir</th>
-                                    <th>jenis kelamin</th>
-                                    <th>jurusan</th>
-                                    <th>telepon</th>
-                                    <th>alamat</th>
+                                    <th>NISN</th>
+                                    <th>Email</th>
+                                    <th>Nama</th>
+                                    <th>Tanggal lahir</th>
+                                    <th>Jenis kelamin</th>
+                                    <th>Jurusan</th>
+                                    <th>Alamat</th>
                                 
                                 </tr>
                             </thead>
@@ -65,7 +64,6 @@
                                     <td>{{ $value->tanggal_lahir}}</td>
                                     <td>{{ $value->jenis_kelamin }}</td>
                                     <td>{{ $value->jurusan}}</td>
-                                    <td>{{ $value->tlp }}</td>
                                     <td>{{ $value->alamat }}</td>
                                     <td>
                                         <form action="{{ route('siswa.destroy',$value->id)}}" method="post">
@@ -73,7 +71,7 @@
                                             @method('DELETE')
                                             <a href="{{ route('siswa.show',$value->id)}}" class="btn-sm btn-info">Detail</a>
                                             <a href="{{ route('siswa.edit',$value->id)}}" class="btn-sm btn-warning">Edit</a>
-                                            <button type="submit" class="btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus ini?')">Delete</button>
+                                            <button class="btn-sm btn-danger">Delete</button>
 
                                         </form>
 
